@@ -1,0 +1,42 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+.main {
+  background-color: red;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 100px 100px 600px;
+  justify-items: center;
+  align-items: center;
+}
+
+.header {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inpt {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+}
+
+.calcBtn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.reset {
+  grid-column: 1/3;
+}
+
+.equal {
+  grid-column: 3/5;
+}
