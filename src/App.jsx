@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./app.css";
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
     ) {
       numsArr.push(val);
       firstNumbers += val;
-      console.log(firstNumbers);
       numsArr.pop();
     }
 
@@ -45,17 +44,13 @@ function App() {
     ) {
       numsArr.push(val);
       secondNumbers += val;
-      console.log(secondNumbers);
       numsArr.pop();
     }
 
     if (val == "+" || val == "-" || val == "x" || val == "/") {
       operands = val;
       numsArr.push(val);
-      console.log(operands);
     }
-
-    console.log(numsArr);
   }
 
   function handleSolve() {
@@ -87,14 +82,19 @@ function App() {
               <span>3</span>
             </div>
             <div className="container">
-              <div className="clrBtn"></div>
+              <div className="colorBtn"></div>
             </div>
           </div>
         </div>
       </div>
 
       <div className="inpt">
-        <input type="text" placeholder="" />
+        <input
+          type="text"
+          placeholder=""
+          className="display"
+          value={"399,981"}
+        />
       </div>
 
       {/* Buttons */}
@@ -108,7 +108,7 @@ function App() {
         <button className="btn" onClick={() => handleClick("9")}>
           9
         </button>
-        <button className="btn">DEL</button>
+        <button className="btn btn-blue">DEL</button>
         <button className="btn" onClick={() => handleClick("4")}>
           4
         </button>
@@ -145,7 +145,7 @@ function App() {
         <button className="btn" onClick={() => handleClick("x")}>
           x
         </button>
-        <button className="btn reset">RESET</button>
+        <button className="btn reset btn-blue">RESET</button>
         <button className="btn equal" onClick={handleSolve}>
           =
         </button>

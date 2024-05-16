@@ -1,42 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 * {
   padding: 0%;
   margin: 0%;
 }
 
+/* Basic styles */
 .main {
-  background-color: red;
+  background-color: hsl(222, 26%, 31%);
   display: grid;
   height: 100vh;
-  grid-template-rows: 100px 100px 600px;
+  grid-template-rows: 80px 70px 600px;
   justify-items: center;
-  align-items: center;
+  gap: 20px;
 }
 
 .header {
   width: 50%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "League Spartan", sans-serif;
+}
+
+.themeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 130px;
+}
+
+.themeBtn {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+}
+
+.count {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  font-size: 12px;
+}
+
+.container {
+  background-color: hsl(223, 31%, 20%);
+  height: 20px;
+  width: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+.colorBtn {
+  background-color: hsl(6, 63%, 50%);
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
 }
 
 .inpt {
-  width: 50%;
+  width: 55%;
   display: flex;
   justify-content: center;
 }
 
 input {
   width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  background-color: hsl(224, 36%, 15%);
+  border: none;
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  text-align: right;
+  padding: 20px;
 }
 
 .calcBtn {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: hsl(223, 31%, 20%);
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  height: 50%;
+  width: 50%;
 }
 
 .reset {
   grid-column: 1/3;
 }
 
+.btn {
+  background-color: hsl(30, 25%, 89%);
+  color: hsl(221, 14%, 31%);
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  border-bottom: 4px solid hsl(28, 16%, 65%);
+}
+
+.btn-blue {
+  background-color: hsl(225, 21%, 49%);
+  color: hsl(0, 0%, 100%);
+  font-size: 18px;
+  border-bottom: 4px solid hsl(224, 28%, 35%);
+}
+
 .equal {
   grid-column: 3/5;
+  background-color: hsl(6, 63%, 50%);
+  color: hsl(0, 0%, 100%);
+  font-size: 18px;
+  border-bottom: 4px solid hsl(6, 70%, 34%);
+}
+
+.btn:hover {
+  cursor: pointer;
 }
