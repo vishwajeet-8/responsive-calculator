@@ -5,9 +5,8 @@
 }
 
 /* Basic styles */
-
-.main {
-  background-color: hsl(222, 26%, 31%);
+.mainMoon {
+  background-color: hsl(0, 0%, 90%);
   display: grid;
   height: 100vh;
   grid-template-rows: 80px 70px 600px;
@@ -15,29 +14,29 @@
   gap: 20px;
 }
 
-.header {
+.headerMoon {
   width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: hsl(60, 10%, 19%);
   font-family: "League Spartan", sans-serif;
 }
 
-.themeBox {
+.themeBoxMoon {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 130px;
 }
 
-.themeBtn {
+.themeBtnMoon {
   display: grid;
   justify-items: center;
   gap: 3px;
 }
 
-.count {
+.countMoon {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
@@ -45,14 +44,14 @@
   font-size: 12px;
 }
 
-.link {
-  color: white;
+.linkMoon {
+  color: hsl(60, 10%, 19%);
   text-decoration: none;
   font-family: "League Spartan", sans-serif;
 }
 
-.container {
-  background-color: hsl(223, 31%, 20%);
+.containerMoon {
+  background-color: hsl(0, 5%, 81%);
   height: 20px;
   width: 60px;
   border-radius: 12px;
@@ -62,26 +61,26 @@
   padding: 3px;
 }
 
-.colorBtn {
-  background-color: hsl(6, 63%, 50%);
+.colorBtnMoon {
+  background-color: hsl(25, 98%, 40%);
   height: 15px;
   width: 15px;
   border-radius: 100%;
 }
 
-.inpt {
+.inptMoon {
   width: 55%;
   display: flex;
   justify-content: center;
 }
 
-.display {
+.displayMoon {
   width: 100%;
   height: 30px;
   border-radius: 8px;
-  background-color: hsl(224, 36%, 15%);
+  background-color: hsl(0, 0%, 93%);
   border: none;
-  color: white;
+  color: hsl(60, 10%, 19%);
   font-size: 32px;
   font-weight: 700;
   font-family: "League Spartan", sans-serif;
@@ -89,10 +88,10 @@
   padding: 20px;
 }
 
-.calcBtn {
+.calcBtnMoon {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: hsl(223, 31%, 20%);
+  background-color: hsl(0, 5%, 81%);
   gap: 10px;
   padding: 20px;
   border-radius: 5px;
@@ -100,35 +99,38 @@
   width: 50%;
 }
 
-.reset {
+.resetMoon {
   grid-column: 1/3;
 }
 
-.btn {
-  background-color: hsl(30, 25%, 89%);
-  color: hsl(221, 14%, 31%);
+.btnMoon {
+  background-color: hsl(45, 7%, 89%);
+  color: hsl(60, 10%, 19%);
   border-radius: 5px;
   font-size: 24px;
   font-weight: 700;
   font-family: "League Spartan", sans-serif;
-  border-bottom: 4px solid hsl(28, 16%, 65%);
+  border: none;
+  border-bottom: 4px solid hsl(35, 11%, 61%);
 }
 
-.btn-blue {
-  background-color: hsl(225, 21%, 49%);
+.btn-blue-moon {
+  background-color: hsl(185, 42%, 37%);
   color: hsl(0, 0%, 100%);
   font-size: 18px;
-  border-bottom: 4px solid hsl(224, 28%, 35%);
+  border: none;
+  border-bottom: 4px solid hsl(185, 58%, 25%);
 }
 
-.equal {
+.equalMoon {
   grid-column: 3/5;
-  background-color: hsl(6, 63%, 50%);
+  background-color: hsl(25, 98%, 40%);
   color: hsl(0, 0%, 100%);
   font-size: 18px;
-  border-bottom: 4px solid hsl(6, 70%, 34%);
+  border: none;
+  border-bottom: 4px solid hsl(25, 99%, 27%);
 }
 
-.btn:hover {
+.btnMoon:hover {
   cursor: pointer;
 }

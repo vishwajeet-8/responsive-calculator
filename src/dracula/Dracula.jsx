@@ -1,7 +1,8 @@
-import "./app.css";
+import React from "react";
+import "./dracula.css";
 import { Link } from "react-router-dom";
 
-function App() {
+function Dracula() {
   let numsArr = [];
   let firstNumbers = "";
   let secondNumbers = "";
@@ -69,110 +70,110 @@ function App() {
   }
 
   return (
-    <div className="main">
+    <div className="mainDracula">
       {/* Header */}
-      <div className="header">
+      <div className="headerDracula">
         <h1 className="calc">calc</h1>
-        <div className="themeBox">
+        <div className="themeBoxDracula">
           <h4 className="theme">Theme</h4>
-          <div className="themeBtn">
-            <div className="count">
+          <div className="themeBtnDracula">
+            <div className="countDracula">
               <span>
-                <Link to={"/"} className="link">
+                <Link to={"/"} className="linkDracula">
                   1
                 </Link>
               </span>
               <span>
-                <Link to={"/moonlight"} className="link">
+                <Link to={"/moonlight"} className="linkDracula">
                   2
                 </Link>
               </span>
               <span>
-                <Link to={"/dracula"} className="link">
+                <Link to={"/dracula"} className="linkDracula">
                   3
                 </Link>
               </span>
             </div>
-            <div className="container">
-              <Link className="colorBtn" to={"/"}></Link>
+            <div className="containerDracula">
               <Link
-                className="colorBtn"
+                className="colorBtnDracula"
+                to={"/"}
+                style={{
+                  backgroundColor: "hsl(268, 71%, 12%)",
+                }}
+              ></Link>
+              <Link
+                className="colorBtnDracula"
                 to={"/moonlight"}
                 style={{
-                  backgroundColor: "hsl(223, 31%, 20%)",
+                  backgroundColor: "hsl(268, 71%, 12%)",
                 }}
               ></Link>
-              <Link
-                className="colorBtn"
-                to={"/dracula"}
-                style={{
-                  backgroundColor: "hsl(223, 31%, 20%)",
-                }}
-              ></Link>
+              <Link className="colorBtnDracula" to={"/dracula"}></Link>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="inpt">
+      <div className="inptDracula">
         <input
           type="text"
           placeholder=""
-          className="display"
+          className="displayDracula"
           value={"399,981"}
         />
       </div>
 
       {/* Buttons */}
-      <div className="calcBtn">
-        <button className="btn" onClick={() => handleClick("7")}>
+      <div className="calcBtnDracula">
+        <button className="btnDracula" onClick={() => handleClick("7")}>
           7
         </button>
-        <button className="btn" onClick={() => handleClick("8")}>
+        <button className="btnDracula" onClick={() => handleClick("8")}>
           8
         </button>
-        <button className="btn" onClick={() => handleClick("9")}>
+        <button className="btnDracula" onClick={() => handleClick("9")}>
           9
         </button>
-        <button className="btn btn-blue">DEL</button>
-        <button className="btn" onClick={() => handleClick("4")}>
+        <button className="btnDracula btn-blue-dracula">DEL</button>
+        <button className="btnDracula" onClick={() => handleClick("4")}>
           4
         </button>
-        <button className="btn" onClick={() => handleClick("5")}>
+        <button className="btnDracula" onClick={() => handleClick("5")}>
           5
         </button>
-        <button className="btn" onClick={() => handleClick("6")}>
+        <button className="btnDracula" onClick={() => handleClick("6")}>
           6
         </button>
-        <button className="btn" onClick={() => handleClick("+")}>
+        <button className="btnDracula" onClick={() => handleClick("+")}>
           +
         </button>
-        <button className="btn" onClick={() => handleClick("1")}>
+        <button className="btnDracula" onClick={() => handleClick("1")}>
           1
         </button>
-        <button className="btn" onClick={() => handleClick("2")}>
+        <button className="btnDracula" onClick={() => handleClick("2")}>
           2
         </button>
-        <button className="btn" onClick={() => handleClick("3")}>
+        <button className="btnDracula" onClick={() => handleClick("3")}>
           3
         </button>
-        <button className="btn" onClick={() => handleClick("-")}>
+        <button className="btnDracula" onClick={() => handleClick("-")}>
           -
         </button>
-        <button className="btn" onClick={() => handleClick(".")}>
+        <button className="btnDracula" onClick={() => handleClick(".")}>
           .
         </button>
-        <button className="btn" onClick={() => handleClick("0")}>
+        <button className="btnDracula" onClick={() => handleClick("0")}>
           0
         </button>
-        <button className="btn" onClick={() => handleClick("/")}>
+        <button className="btnDracula" onClick={() => handleClick("/")}>
           /
         </button>
-        <button className="btn" onClick={() => handleClick("x")}>
+        <button className="btnDracula" onClick={() => handleClick("x")}>
           x
         </button>
-        <button className="btn reset btn-blue">RESET</button>
-        <button className="btn equal" onClick={handleSolve}>
+        <button className="btnDracula resetDracula btn-blue-dracula">RESET</button>
+        <button className="btnDracula equalDracula" onClick={handleSolve}>
           =
         </button>
       </div>
@@ -180,4 +181,4 @@ function App() {
   );
 }
 
-export default App;
+export default Dracula;

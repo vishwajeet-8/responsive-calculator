@@ -1,7 +1,8 @@
-import "./app.css";
+import React from "react";
+import "./moonLight.css";
 import { Link } from "react-router-dom";
 
-function App() {
+function MoonLight() {
   let numsArr = [];
   let firstNumbers = "";
   let secondNumbers = "";
@@ -69,44 +70,44 @@ function App() {
   }
 
   return (
-    <div className="main">
+    <div className="mainMoon">
       {/* Header */}
-      <div className="header">
+      <div className="headerMoon">
         <h1 className="calc">calc</h1>
-        <div className="themeBox">
+        <div className="themeBoxMoon">
           <h4 className="theme">Theme</h4>
-          <div className="themeBtn">
-            <div className="count">
+          <div className="themeBtnMoon">
+            <div className="countMoon">
               <span>
-                <Link to={"/"} className="link">
+                <Link to={"/"} className="linkMoon">
                   1
                 </Link>
               </span>
               <span>
-                <Link to={"/moonlight"} className="link">
+                <Link to={"/moonlight"} className="linkMoon">
                   2
                 </Link>
               </span>
               <span>
-                <Link to={"/dracula"} className="link">
+                <Link to={"/dracula"} className="linkMoon">
                   3
                 </Link>
               </span>
             </div>
-            <div className="container">
-              <Link className="colorBtn" to={"/"}></Link>
+            <div className="containerMoon">
               <Link
-                className="colorBtn"
-                to={"/moonlight"}
+                className="colorBtnMoon"
+                to={"/"}
                 style={{
-                  backgroundColor: "hsl(223, 31%, 20%)",
+                  backgroundColor: "hsl(0, 5%, 81%)",
                 }}
               ></Link>
+              <Link className="colorBtnMoon" to={"/moonlight"}></Link>
               <Link
-                className="colorBtn"
+                className="colorBtnMoon"
                 to={"/dracula"}
                 style={{
-                  backgroundColor: "hsl(223, 31%, 20%)",
+                  backgroundColor: "hsl(0, 5%, 81%)",
                 }}
               ></Link>
             </div>
@@ -114,65 +115,65 @@ function App() {
         </div>
       </div>
 
-      <div className="inpt">
+      <div className="inptMoon">
         <input
           type="text"
           placeholder=""
-          className="display"
+          className="displayMoon"
           value={"399,981"}
         />
       </div>
 
       {/* Buttons */}
-      <div className="calcBtn">
-        <button className="btn" onClick={() => handleClick("7")}>
+      <div className="calcBtnMoon">
+        <button className="btnMoon" onClick={() => handleClick("7")}>
           7
         </button>
-        <button className="btn" onClick={() => handleClick("8")}>
+        <button className="btnMoon" onClick={() => handleClick("8")}>
           8
         </button>
-        <button className="btn" onClick={() => handleClick("9")}>
+        <button className="btnMoon" onClick={() => handleClick("9")}>
           9
         </button>
-        <button className="btn btn-blue">DEL</button>
-        <button className="btn" onClick={() => handleClick("4")}>
+        <button className="btnMoon btn-blue-moon">DEL</button>
+        <button className="btnMoon" onClick={() => handleClick("4")}>
           4
         </button>
-        <button className="btn" onClick={() => handleClick("5")}>
+        <button className="btnMoon" onClick={() => handleClick("5")}>
           5
         </button>
-        <button className="btn" onClick={() => handleClick("6")}>
+        <button className="btnMoon" onClick={() => handleClick("6")}>
           6
         </button>
-        <button className="btn" onClick={() => handleClick("+")}>
+        <button className="btnMoon" onClick={() => handleClick("+")}>
           +
         </button>
-        <button className="btn" onClick={() => handleClick("1")}>
+        <button className="btnMoon" onClick={() => handleClick("1")}>
           1
         </button>
-        <button className="btn" onClick={() => handleClick("2")}>
+        <button className="btnMoon" onClick={() => handleClick("2")}>
           2
         </button>
-        <button className="btn" onClick={() => handleClick("3")}>
+        <button className="btnMoon" onClick={() => handleClick("3")}>
           3
         </button>
-        <button className="btn" onClick={() => handleClick("-")}>
+        <button className="btnMoon" onClick={() => handleClick("-")}>
           -
         </button>
-        <button className="btn" onClick={() => handleClick(".")}>
+        <button className="btnMoon" onClick={() => handleClick(".")}>
           .
         </button>
-        <button className="btn" onClick={() => handleClick("0")}>
+        <button className="btnMoon" onClick={() => handleClick("0")}>
           0
         </button>
-        <button className="btn" onClick={() => handleClick("/")}>
+        <button className="btnMoon" onClick={() => handleClick("/")}>
           /
         </button>
-        <button className="btn" onClick={() => handleClick("x")}>
+        <button className="btnMoon" onClick={() => handleClick("x")}>
           x
         </button>
-        <button className="btn reset btn-blue">RESET</button>
-        <button className="btn equal" onClick={handleSolve}>
+        <button className="btnMoon resetMoon btn-blue-moon">RESET</button>
+        <button className="btnMoon equalMoon" onClick={handleSolve}>
           =
         </button>
       </div>
@@ -180,4 +181,4 @@ function App() {
   );
 }
 
-export default App;
+export default MoonLight;
