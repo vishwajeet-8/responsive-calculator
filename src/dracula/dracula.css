@@ -4,13 +4,20 @@
   margin: 0%;
 }
 
+@media only screen and (max-width: 456px) {
+  .themeDracula {
+    display: none;
+  }
+}
+
 /* Basic styles */
 .mainDracula {
   background-color: hsl(268, 75%, 9%);
   display: grid;
-  height: 100vh;
+  height: 120vh;
   grid-template-rows: 80px 70px 600px;
   justify-items: center;
+  align-content: center;
   gap: 20px;
 }
 
@@ -26,11 +33,12 @@
 .themeBoxDracula {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   width: 130px;
 }
 
 .themeBtnDracula {
+  margin-left: 20px;
   display: grid;
   justify-items: center;
   gap: 3px;

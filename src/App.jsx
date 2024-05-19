@@ -1,12 +1,29 @@
+import { useRef, useState } from "react";
 import "./app.css";
 import { Link } from "react-router-dom";
 
 function App() {
+  const inputBox = useRef();
+  const deleteBtn = useRef();
   let numsArr = [];
   let firstNumbers = "";
   let secondNumbers = "";
   let operands;
   let result;
+  let displayArr = [];
+
+  function showNumber() {
+    inputBox.current.value = "";
+    for (let i = 0; i < displayArr.length; i++) {
+      let val = displayArr[i];
+      inputBox.current.value += val;
+    }
+  }
+
+  function handleDelete() {
+    displayArr.pop();
+    showNumber();
+  }
 
   function handleClick(val) {
     if (
@@ -24,11 +41,11 @@ function App() {
       numsArr.length === 0
     ) {
       numsArr.push(val);
-      firstNumbers += val;
+      firstNumbers += numsArr[0];
       numsArr.pop();
-    }
-
-    if (
+      displayArr.push(val);
+      inputBox.current.value += val;
+    } else if (
       (val == 1 ||
         val == 2 ||
         val == 3 ||
@@ -43,13 +60,15 @@ function App() {
       numsArr.length !== 0
     ) {
       numsArr.push(val);
-      secondNumbers += val;
+      secondNumbers += numsArr[1];
       numsArr.pop();
-    }
-
-    if (val == "+" || val == "-" || val == "x" || val == "/") {
-      operands = val;
+      displayArr.push(val);
+      inputBox.current.value += val;
+    } else if (val == "+" || val == "-" || val == "x" || val == "/") {
       numsArr.push(val);
+      operands = numsArr[0];
+      displayArr.push(val);
+      inputBox.current.value += val;
     }
   }
 
@@ -65,7 +84,8 @@ function App() {
     } else {
       result = first * second;
     }
-    console.log(result);
+    inputBox.current.value = result;
+    deleteBtn.current.disabled = true;
   }
 
   return (
@@ -115,12 +135,7 @@ function App() {
       </div>
 
       <div className="inpt">
-        <input
-          type="text"
-          placeholder=""
-          className="display"
-          value={"399,981"}
-        />
+        <input ref={inputBox} type="text" placeholder="" className="display" />
       </div>
 
       {/* Buttons */}
@@ -134,7 +149,13 @@ function App() {
         <button className="btn" onClick={() => handleClick("9")}>
           9
         </button>
-        <button className="btn btn-blue">DEL</button>
+        <button
+          ref={deleteBtn}
+          onClick={() => handleDelete()}
+          className="btn btn-blue"
+        >
+          DEL
+        </button>
         <button className="btn" onClick={() => handleClick("4")}>
           4
         </button>
@@ -171,7 +192,12 @@ function App() {
         <button className="btn" onClick={() => handleClick("x")}>
           x
         </button>
-        <button className="btn reset btn-blue">RESET</button>
+        <button
+          className="btn reset btn-blue"
+          onClick={() => window.location.reload()}
+        >
+          RESET
+        </button>
         <button className="btn equal" onClick={handleSolve}>
           =
         </button>

@@ -6,12 +6,19 @@
 
 /* Basic styles */
 
+@media only screen and (max-width: 456px) {
+  .theme {
+    display: none;
+  }
+}
+
 .main {
   background-color: hsl(222, 26%, 31%);
   display: grid;
-  height: 100vh;
+  height: 120vh;
   grid-template-rows: 80px 70px 600px;
   justify-items: center;
+  align-content: center;
   gap: 20px;
 }
 
@@ -27,11 +34,12 @@
 .themeBox {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   width: 130px;
 }
 
 .themeBtn {
+  margin-left: 20px;
   display: grid;
   justify-items: center;
   gap: 3px;

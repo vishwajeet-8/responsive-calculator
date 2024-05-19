@@ -1,13 +1,29 @@
-import React from "react";
+import { useRef } from "react";
 import "./moonLight.css";
 import { Link } from "react-router-dom";
 
 function MoonLight() {
+  const inputBox = useRef();
+  const deleteBtn = useRef();
   let numsArr = [];
   let firstNumbers = "";
   let secondNumbers = "";
   let operands;
   let result;
+  let displayArr = [];
+
+  function showNumber() {
+    inputBox.current.value = "";
+    for (let i = 0; i < displayArr.length; i++) {
+      let val = displayArr[i];
+      inputBox.current.value += val;
+    }
+  }
+
+  function handleDelete() {
+    displayArr.pop();
+    showNumber();
+  }
 
   function handleClick(val) {
     if (
@@ -25,11 +41,11 @@ function MoonLight() {
       numsArr.length === 0
     ) {
       numsArr.push(val);
-      firstNumbers += val;
+      firstNumbers += numsArr[0];
       numsArr.pop();
-    }
-
-    if (
+      displayArr.push(val);
+      inputBox.current.value += val;
+    } else if (
       (val == 1 ||
         val == 2 ||
         val == 3 ||
@@ -44,13 +60,15 @@ function MoonLight() {
       numsArr.length !== 0
     ) {
       numsArr.push(val);
-      secondNumbers += val;
+      secondNumbers += numsArr[1];
       numsArr.pop();
-    }
-
-    if (val == "+" || val == "-" || val == "x" || val == "/") {
-      operands = val;
+      displayArr.push(val);
+      inputBox.current.value += val;
+    } else if (val == "+" || val == "-" || val == "x" || val == "/") {
       numsArr.push(val);
+      operands = numsArr[0];
+      displayArr.push(val);
+      inputBox.current.value += val;
     }
   }
 
@@ -66,7 +84,8 @@ function MoonLight() {
     } else {
       result = first * second;
     }
-    console.log(result);
+    inputBox.current.value = result;
+    deleteBtn.current.disabled = true;
   }
 
   return (
@@ -117,10 +136,10 @@ function MoonLight() {
 
       <div className="inptMoon">
         <input
+          ref={inputBox}
           type="text"
           placeholder=""
           className="displayMoon"
-          value={"399,981"}
         />
       </div>
 
@@ -135,7 +154,13 @@ function MoonLight() {
         <button className="btnMoon" onClick={() => handleClick("9")}>
           9
         </button>
-        <button className="btnMoon btn-blue-moon">DEL</button>
+        <button
+          ref={deleteBtn}
+          onClick={() => handleDelete()}
+          className="btnMoon btn-blue-moon"
+        >
+          DEL
+        </button>
         <button className="btnMoon" onClick={() => handleClick("4")}>
           4
         </button>
@@ -172,7 +197,12 @@ function MoonLight() {
         <button className="btnMoon" onClick={() => handleClick("x")}>
           x
         </button>
-        <button className="btnMoon resetMoon btn-blue-moon">RESET</button>
+        <button
+          className="btnMoon resetMoon btn-blue-moon"
+          onClick={() => window.location.reload()}
+        >
+          RESET
+        </button>
         <button className="btnMoon equalMoon" onClick={handleSolve}>
           =
         </button>
