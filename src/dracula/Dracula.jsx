@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 function Dracula() {
   const inputBox = useRef();
   const deleteBtn = useRef();
-  let numsArr = [];
-  let firstNumbers = "";
-  let secondNumbers = "";
-  let operands;
-  let result;
   let displayArr = [];
+  let arr = [];
 
-  function showNumber() {
+  function handleDelete() {
+    displayArr.pop();
+    handleDisplayArr();
     inputBox.current.value = "";
     for (let i = 0; i < displayArr.length; i++) {
       let val = displayArr[i];
@@ -20,70 +18,59 @@ function Dracula() {
     }
   }
 
-  function handleDelete() {
-    displayArr.pop();
-    showNumber();
+  function handleDisplayArr() {
+    let str = "";
+    let resultArr = [];
+    for (let i = 0; i < displayArr.length; i++) {
+      if (
+        displayArr[i] == "+" ||
+        displayArr[i] == "-" ||
+        displayArr[i] == "x" ||
+        displayArr[i] == "/"
+      ) {
+        resultArr.push(str);
+        str = "";
+        resultArr.push(displayArr[i]);
+      } else {
+        str += displayArr[i];
+      }
+    }
+    resultArr.push(str);
+    arr = resultArr;
   }
 
   function handleClick(val) {
-    if (
-      (val == 1 ||
-        val == 2 ||
-        val == 3 ||
-        val == 4 ||
-        val == 5 ||
-        val == 6 ||
-        val == 7 ||
-        val == 8 ||
-        val == 9 ||
-        val == 0 ||
-        val === ".") &&
-      numsArr.length === 0
-    ) {
-      numsArr.push(val);
-      firstNumbers += numsArr[0];
-      numsArr.pop();
-      displayArr.push(val);
-      inputBox.current.value += val;
-    } else if (
-      (val == 1 ||
-        val == 2 ||
-        val == 3 ||
-        val == 4 ||
-        val == 5 ||
-        val == 6 ||
-        val == 7 ||
-        val == 8 ||
-        val == 9 ||
-        val == 0 ||
-        val === ".") &&
-      numsArr.length !== 0
-    ) {
-      numsArr.push(val);
-      secondNumbers += numsArr[1];
-      numsArr.pop();
-      displayArr.push(val);
-      inputBox.current.value += val;
-    } else if (val == "+" || val == "-" || val == "x" || val == "/") {
-      numsArr.push(val);
-      operands = numsArr[0];
-      displayArr.push(val);
-      inputBox.current.value += val;
-    }
+    inputBox.current.value += val;
+    displayArr.push(val);
+    handleDisplayArr();
   }
 
   function handleSolve() {
-    let first = parseFloat(firstNumbers);
-    let second = parseFloat(secondNumbers);
-    if (operands === "+") {
-      result = first + second;
-    } else if (operands === "-") {
-      result = first - second;
-    } else if (operands === "/") {
-      result = first / second;
-    } else {
-      result = first * second;
+    let result = 0;
+    let operator = "+";
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === "+") {
+        operator = "+";
+      } else if (arr[i] === "-") {
+        operator = "-";
+      } else if (arr[i] === "/") {
+        operator = "/";
+      } else if (arr[i] === "x") {
+        operator = "*";
+      } else {
+        if (operator == "+") {
+          result += parseFloat(arr[i]);
+        } else if (operator == "-") {
+          result -= parseFloat(arr[i]);
+        } else if (operator == "/") {
+          result /= parseFloat(arr[i]);
+        } else if (operator == "*") {
+          result *= parseFloat(arr[i]);
+        }
+      }
     }
+
     inputBox.current.value = result;
     deleteBtn.current.disabled = true;
   }
