@@ -186,7 +186,11 @@ function Dracula() {
         </button>
         <button
           className="btnDracula resetDracula btn-blue-dracula"
-          onClick={() => window.location.reload()}
+          onClick={() => {
+            inputBox.current.value = "";
+            displayArr = [];
+            arr = [];
+          }}
         >
           RESET
         </button>

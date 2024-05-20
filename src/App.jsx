@@ -181,7 +181,11 @@ function App() {
         </button>
         <button
           className="btn reset btn-blue"
-          onClick={() => window.location.reload()}
+          onClick={() => {
+            inputBox.current.value = "";
+            displayArr = [];
+            arr = [];
+          }}
         >
           RESET
         </button>

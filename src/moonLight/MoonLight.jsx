@@ -186,7 +186,11 @@ function MoonLight() {
         </button>
         <button
           className="btnMoon resetMoon btn-blue-moon"
-          onClick={() => window.location.reload()}
+          onClick={() => {
+            inputBox.current.value = "";
+            displayArr = [];
+            arr = [];
+          }}
         >
           RESET
         </button>
