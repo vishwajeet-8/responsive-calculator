@@ -13,7 +13,7 @@
 }
 
 .main {
-  background-color: hsl(222, 26%, 31%);
+  background-color: red;
   display: grid;
   height: 120vh;
   grid-template-rows: 80px 70px 600px;
