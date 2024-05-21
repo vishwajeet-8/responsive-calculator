@@ -8,17 +8,23 @@
   .themeDracula {
     display: none;
   }
+
+  .mainDracula {
+    width: 450px;
+  }
 }
 
 /* Basic styles */
 .mainDracula {
   background-color: hsl(268, 75%, 9%);
   display: grid;
-  height: 120vh;
+  height: 131vh;
   grid-template-rows: 80px 70px 600px;
   justify-items: center;
   align-content: center;
   gap: 20px;
+  grid-template-columns: 720px;
+  justify-content: center;
 }
 
 .headerDracula {

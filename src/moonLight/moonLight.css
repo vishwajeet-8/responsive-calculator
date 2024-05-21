@@ -9,16 +9,22 @@
   .themeMoon {
     display: none;
   }
+
+  .mainMoon {
+    width: 450px;
+  }
 }
 
 .mainMoon {
   background-color: hsl(0, 0%, 90%);
   display: grid;
-  height: 120vh;
+  height: 131vh;
   grid-template-rows: 80px 70px 600px;
   justify-items: center;
   align-content: center;
   gap: 20px;
+  grid-template-columns: 720px;
+  justify-content: center;
 }
 
 .headerMoon {
